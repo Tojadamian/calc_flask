@@ -22,11 +22,11 @@ This project is a simple calculator web application built with Flask, a lightwei
     ```
 
 2. (Optional) Create and activate a virtual environment:
-    - **PowerShell**:
+    - ```PowerShell
         python -m venv venv
         .\venv\Scripts\Activate.ps1
         ```
-    - **Bash**:
+    - ```Bash
         python -m venv venv
         source venv/bin/activate
         ```
