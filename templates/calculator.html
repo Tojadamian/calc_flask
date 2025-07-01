@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator_flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="post">
+        <input type="number" name="num1" placeholder="Enter first number" required>
+        <input type="number" id="num2Field" name="num2" placeholder="Enter second number">
+        <select name="operation" id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+            <option value="power">^</option>
+            <option value="sqrt">√</option>
+        </select>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result is not none %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

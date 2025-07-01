@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #22223b;
+    margin-top: 40px;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+}
+
+form {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 32px rgba(34, 34, 59, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-width: 320px;
+    max-width: 90vw;
+    margin-top: 2rem;
+    transition: box-shadow 0.2s;
+}
+
+form:hover {
+    box-shadow: 0 10px 40px rgba(34, 34, 59, 0.15);
+}
+
+input[type="number"], select {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #c9c9c9;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #f8fafc;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #5cb85c;
+    background: #fff;
+}
+
+button {
+    background: linear-gradient(90deg, #5cb85c 60%, #48c6ef 100%);
+    color: white;
+    border: none;
+    padding: 0.9rem 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(76, 174, 76, 0.08);
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #48c6ef 0%, #5cb85c 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+h2 {
+    color: #22223b;
+    background: #f6f8fa;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 8px rgba(34, 34, 59, 0.06);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+@media (max-width: 500px) {
+    form {
+        padding: 1rem;
+        min-width: unset;
+    }
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    h2 {
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+    }
+}
