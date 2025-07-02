@@ -30,11 +30,16 @@ form {
     transition: box-shadow 0.2s;
 }
 
+div {
+    display: flex;
+    flex-direction: column;
+}
+
 form:hover {
     box-shadow: 0 10px 40px rgba(34, 34, 59, 0.15);
 }
 
-input[type="number"], select {
+input[type="number"], input[type="text"], select {
     padding: 0.8rem 1rem;
     border: 1.5px solid #c9c9c9;
     border-radius: 8px;
@@ -44,7 +49,7 @@ input[type="number"], select {
     background: #f8fafc;
 }
 
-input[type="number"]:focus, select:focus {
+input[type="number"]:focus, input[type="text"]:focus, select:focus {
     border-color: #5cb85c;
     background: #fff;
 }
@@ -77,6 +82,7 @@ h2 {
     font-size: 1.3rem;
     letter-spacing: 1px;
     display: inline-block;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 @media (max-width: 500px) {
@@ -91,5 +97,63 @@ h2 {
     h2 {
         padding: 0.7rem 1rem;
         font-size: 1rem;
+    }
+}
+
+.nav-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.nav-switcher a {
+    position: relative;
+    text-decoration: none;
+    color: #61dafb;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+    overflow: hidden;
+}
+
+.nav-switcher a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 8px;
+    height: 3px;
+    background: linear-gradient(90deg, #5cb85c 60%, #48c6ef 100%);
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0.7) translateY(10px);
+    transition: opacity 0.4s, transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+
+.nav-switcher a:hover,
+.nav-switcher a.active {
+    background: rgba(72, 198, 239, 0.08);
+    color: #22223b;
+}
+
+.nav-switcher a.active::after {
+    opacity: 1;
+    transform: scaleX(1) translateY(0);
+}
+.fade-slide-in {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlideIn 0.7s cubic-bezier(.4,2,.6,1) forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

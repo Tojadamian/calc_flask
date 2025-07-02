@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator_flask</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Calculator</h1>
-    <form method="post">
+    <nav class="nav-switcher">
+        <a href="{{ url_for('calculator') }}" class="{% if request.endpoint == 'calculator' %}active{% endif %}">Calculator</a>
+        <a href="{{ url_for('currencies') }}" class="{% if request.endpoint == 'currencies' %}active{% endif %}">Currencies</a>
+    </nav>
+    <form method="post" class="fade-slide-in">
         <input type="number" name="num1" placeholder="Enter first number" required>
         <input type="number" id="num2Field" name="num2" placeholder="Enter second number">
         <select name="operation" id="operation">

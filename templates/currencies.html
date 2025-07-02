@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="nav-switcher">
+        <a href="{{ url_for('calculator') }}" class="{% if request.endpoint == 'calculator' %}active{% endif %}">Calculator</a>
+        <a href="{{ url_for('currencies') }}" class="{% if request.endpoint == 'currencies' %}active{% endif %}">Currencies</a>
+    </nav>
+    <form method="post" autocomplete="off" id="convert-form" class="fade-slide-in">
+        <div class="autocomplete-wrapper">
+            <input type="text" name="from_currency" id="from_currency" placeholder="From currency (e.g. USD)" autocomplete="off" required>
+            <div id="from_suggestions"></div>
+        </div>
+        <div class="autocomplete-wrapper">
+            <input type="text" name="to_currency" id="to_currency" placeholder="To currency (e.g. EUR)" autocomplete="off" required>
+            <div id="to_suggestions"></div>
+        </div>
+        <input type="number" name="amount" id="amount" placeholder="Enter amount" required>
+        <button type="submit">Convert</button>
+    </form>
+    <div id="conversion-result"></div>
+    <div id="conversion-output"></div>
+    <!-- {% if result is not none %}
+        <h2>{{ result }}</h2>
+    {% endif %} -->
+    <script src="{{ url_for('static', filename='cur_script.js') }}"></script>
+</body>
+</html>
